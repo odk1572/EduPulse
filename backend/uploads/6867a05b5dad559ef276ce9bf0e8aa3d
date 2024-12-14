@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <defs>
+    <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEDC15;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#F56040;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#C13584;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#405DE6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo Background -->
+  <rect x="100" y="50" width="400" height="400" rx="100" fill="url(#instaGradient)"/>
+  
+  <!-- Camera Outline -->
+  <circle cx="300" cy="250" r="130" fill="none" stroke="white" stroke-width="40"/>
+  
+  <!-- Camera Lens Dot -->
+  <circle cx="430" cy="170" r="40" fill="white"/>
+  
+  <!-- Handwritten-Style Text -->
+  <text x="300" y="470" 
+        font-family="'Comic Sans MS', 'Comic Neue', cursive" 
+        font-weight="bold"
+        font-size="55" 
+        text-anchor="middle" 
+        fill="black"
+        style="paint-order: stroke;
+               stroke: white;
+               stroke-width: 2px;">
+    Instaverse
+  </text>
+</svg>
