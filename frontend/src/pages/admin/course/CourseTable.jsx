@@ -22,48 +22,50 @@ const CourseTable = () => {
           Create a new course
         </Button>
       </div>
-      <Table className="w-full bg-gray-900 shadow-lg rounded-lg border border-gray-700">
-        <TableCaption className="text-lg font-semibold text-gray-300">
-          A list of your recent courses.
-        </TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="text-left text-gray-200">Price</TableHead>
-            <TableHead className="text-left text-gray-200">Status</TableHead>
-            <TableHead className="text-left text-gray-200">Title</TableHead>
-            <TableHead className="text-right text-gray-200">Action</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {data.courses.map((course) => (
-            <TableRow key={course._id} className="hover:bg-gray-800 transition-colors duration-200">
-              <TableCell className="font-medium text-gray-200">{course?.coursePrice || "NA"}</TableCell>
-              <TableCell>
-                <Badge
-                  className={
-                    course.isPublished
-                      ? "bg-green-600 text-white shadow-md"
-                      : "bg-yellow-600 text-black shadow-md"
-                  }
-                >
-                  {course.isPublished ? "Published" : "Draft"}
-                </Badge>
-              </TableCell>
-              <TableCell className="text-gray-200">{course.courseTitle}</TableCell>
-              <TableCell className="text-right">
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => navigate(`${course._id}`)}
-                  className="text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
-                >
-                  <Edit />
-                </Button>
-              </TableCell>
+      <div className="overflow-x-auto">
+        <Table className="w-full bg-gray-900 shadow-lg rounded-lg border border-gray-700">
+          <TableCaption className="text-lg font-semibold text-gray-300">
+            A list of your recent courses.
+          </TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="text-left text-gray-200">Price</TableHead>
+              <TableHead className="text-left text-gray-200">Status</TableHead>
+              <TableHead className="text-left text-gray-200">Title</TableHead>
+              <TableHead className="text-right text-gray-200">Action</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHeader>
+          <TableBody>
+            {data.courses.map((course) => (
+              <TableRow key={course._id} className="hover:bg-gray-800 transition-colors duration-200">
+                <TableCell className="font-medium text-gray-200">{course?.coursePrice || "NA"}</TableCell>
+                <TableCell>
+                  <Badge
+                    className={
+                      course.isPublished
+                        ? "bg-green-600 text-white shadow-md"
+                        : "bg-yellow-600 text-black shadow-md"
+                    }
+                  >
+                    {course.isPublished ? "Published" : "Draft"}
+                  </Badge>
+                </TableCell>
+                <TableCell className="text-gray-200">{course.courseTitle}</TableCell>
+                <TableCell className="text-right">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => navigate(`${course._id}`)}
+                    className="text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors duration-200"
+                  >
+                    <Edit />
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 };
