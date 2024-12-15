@@ -298,6 +298,14 @@ const MobileNavbar = ({ user, logoutHandler }) => {
               >
                 Dashboard
               </Button>
+                            <Button
+                type="submit"
+                onClick={() => navigate("/admin/course")}
+                className="w-full bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-white hover:scale-105 transform transition-all"
+              >
+                Course Section
+              </Button>
+
             </SheetClose>
           </SheetFooter>
         )}
