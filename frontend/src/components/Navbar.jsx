@@ -212,10 +212,10 @@ const MobileNavbar = ({ user, logoutHandler }) => {
           <Menu className="text-gray-900 dark:text-white" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col bg-gray-800 text-gray-300">
-        <SheetHeader className="flex flex-row items-center justify-between mt-2">
-          <SheetTitle>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+      <SheetContent className="flex flex-col bg-gray-800 text-gray-300 w-full">
+        <SheetHeader className="flex flex-row items-center justify-between mt-2 px-4 sm:px-6">
+          <SheetTitle className="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" className="w-8 h-8">
               <defs>
                 <linearGradient
                   id="eduPulseGradient"
@@ -262,13 +262,13 @@ const MobileNavbar = ({ user, logoutHandler }) => {
                 />
               </g>
             </svg>
-            <Link to="/" className="text-xl font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+            <Link to="/" className="text-xl font-semibold text-blue-600 dark:text-blue-400 hover:underline ml-2">
               EduPulse
             </Link>
           </SheetTitle>
         </SheetHeader>
         <Separator className="border-gray-700" />
-        <nav className="flex flex-col space-y-4">
+        <nav className="flex flex-col space-y-4 px-4 sm:px-6">
           <Link
             to="/my-learning"
             className="text-lg hover:text-blue-600 dark:hover:text-blue-400"
@@ -289,7 +289,7 @@ const MobileNavbar = ({ user, logoutHandler }) => {
           </p>
         </nav>
         {user?.role === "instructor" && (
-          <SheetFooter>
+          <SheetFooter className="flex flex-col space-y-2 px-4 sm:px-6">
             <SheetClose asChild>
               <Button
                 type="submit"
@@ -303,7 +303,7 @@ const MobileNavbar = ({ user, logoutHandler }) => {
               <Button
                 type="submit"
                 onClick={() => navigate("/admin/course")}
-                className="w-full bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 text-white hover:scale-105 transform transition-all mt-2"
+                className="w-full bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 text-white hover:scale-105 transform transition-all"
               >
                 Course
               </Button>
@@ -314,3 +314,4 @@ const MobileNavbar = ({ user, logoutHandler }) => {
     </Sheet>
   );
 };
+
