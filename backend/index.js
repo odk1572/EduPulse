@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://edupulse-m37g.onrender.com/profile",
     credentials:true
 }));
  
