@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:"https://edupulse-m37g.onrender.com/profile",
+    origin:"https://edupulse-m37g.onrender.com",
     credentials:true
 }));
  
